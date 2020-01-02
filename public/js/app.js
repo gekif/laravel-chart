@@ -1743,7 +1743,10 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     createProduct: function createProduct() {
-      console.log(this.product);
+      var uri = 'http://chart.dev/products';
+      axios.post(uri, this.product).then(function (response) {
+        window.location.reload();
+      });
     }
   }
 });

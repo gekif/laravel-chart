@@ -48,8 +48,11 @@
 
         methods: {
             createProduct() {
-                console.log(this.product);
+                let uri = 'http://chart.dev/products';
 
+                axios.post(uri, this.product).then((response) => {
+                    window.location.reload();
+                });
 
             }
         }
