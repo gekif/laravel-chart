@@ -15,8 +15,16 @@
             }
         },
 
+        methods: {
+            getProducts() {
+                axios.get(this.url).then((response) => {
+                    console.log(response.data);
+                });
+            }
+        },
+
         mounted() {
-            console.log('Component mounted.')
+            this.getProducts();
         }
     }
 </script>
