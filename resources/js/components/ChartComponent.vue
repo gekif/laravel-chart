@@ -30,9 +30,22 @@
                             this.prices.push(element.price);
                         });
 
+                        this.renderChart({
+
+                            labels: this.years,
+                            datasets: [
+                                {
+                                    label: 'Sales',
+                                    backgroundColor: '#f87979',
+                                    data: this.prices
+                                }
+                            ]
+                        }, {responsive: true, maintainAspectRatio: false});
+
+                    } else {
+                        console.log('No Data');
                     }
 
-                    console.log(this.labels);
 
                 });
             }
